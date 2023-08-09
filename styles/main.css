@@ -97,7 +97,54 @@
     font-family: 'Cherry Bomb One', cursive;
     color: #EA551B!important;
 }
+.card-text {
+    font-family: 'Cherry Bomb One', cursive;
+    color: #48C0EA!important;
+}
 
 .container mt-5 pt-5{
     margin-top: -100;
 }
+
+.card-img-top {
+    width:auto;
+    height:200px;
+    margin: auto;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+
+
+
+.card-img-last {
+    width:auto;
+    height:200px;
+    margin: auto;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+
+
+.card-img-middle {
+    width:auto;
+    height:200px;
+    margin: auto;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+
+
+.card-img-right {
+    width:auto;
+    height:200px;
+    margin: auto;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+
+
+
+.card-img-left {
+    width:auto;
+    height:200px;
+    margin: auto;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1); 
+}
+
+
