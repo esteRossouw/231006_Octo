@@ -15,12 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Borel&family=Cherry+Bomb+One&family=Lato:ital,wght@0,100;0,400;0,700;1,400&family=Rubik+Bubbles&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="scripts/main.js"></script>
-
     <!-- Nav Bar-->
     <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: #48C0EA;">
         <div class="container-fluid">
@@ -43,78 +38,92 @@
             </ul>
           </div>
         </div>
-      </nav>
-      <section style="background-color: #48C0EA;">
-        <div class="container mt-5 pt-5">
+    </nav>
 
-          <!-- Header -->
-          <h2>Explore with</h2>
-          <h5 id="windspeed" class="priMed fs04 italics">Windspeed</h5>
-          <!-- ---------------------------------------------------------------------------------------------------- -->
-          <!-- Filters and Sorts -->
+    <div class="container mt-5 pt-5">
+      <!-- Header -->
+      <h2>Explore with</h2>
+      <div class="container">
+          <h1>Trip Options</h1>
   
-          <div class="row align-items-center mt-4">
-  
-            <!-- Filter Radio Buttons -->
-  
-            <div class="btn-group col-auto" role="group">
-              <input type="radio" class="btn-check" name="filterRadio" id="allTripsFilter" value="" autocomplete="off" checked>
-              <label class="btn btn-outline-success" for="allTripsFilter">All Trips</label>
-            
-              <input type="radio" class="btn-check" name="filterRadio" id="adultsFilter" autocomplete="off" value="adult">
-              <label class="btn btn-outline-success" for="adultsFilter"><i class="adultsOnly"></i> Adults Only</label>
-            
-              <input type="radio" class="btn-check" name="filterRadio" id="kidFriendlyFilter" autocomplete="off" value="kid">
-              <label class="btn btn-outline-success" for="kidFriendlyFilter"><i class="kidFriendly"></i> Kid Friendly</label>
-            </div>
-  
-            <!-- Sorting Radio Buttons -->
-  
-            <div class="btn-group col-auto" role="group">
-              <input type="radio" class="btn-check" name="sortRadio" id="defaultSort" value="date added" autocomplete="off" checked>
-              <label class="btn btn-outline-secondary" for="defaultSort"><i class="bi bi-calendar4"></i> Newset to Oldest</label>
-            
-              <input type="radio" class="btn-check" name="sortRadio" id="priceSort" value="low to high" autocomplete="off">
-              <label class="btn btn-outline-secondary" for="priceSort"><i class="bi bi-sort-down-alt"></i> Price: Low to High</label>
-            </div>
+          <!-- Filter buttons -->
+          <div class="btn-group" role="group" aria-label="Filters">
+              <button type="button" class="btn btn-primary filter-btn" data-filter="all">All Destinations</button>
+              <button type="button" class="btn btn-primary filter-btn" data-filter="short">Short Duration Trips</button>
+              <button type="button" class="btn btn-primary filter-btn" data-filter="long">Long Duration Trips</button>
+              <button type="button" class="btn btn-primary filter-btn" data-filter="single">Single Destination</button>
+              <button type="button" class="btn btn-primary filter-btn" data-filter="multi">Multi Destinations</button>
+              <button type="button" class="btn btn-primary filter-btn" data-filter="round">Round Trips</button>
+              <button type="button" class="btn btn-primary filter-btn" data-filter="rowboat">Row Boat Special</button>
           </div>
   
-          <!-- ---------------------------------------------------------------------------------------------------- -->
-          <!-- Trip List Cards -->
-  
-          <div class="row py-5 gy-3" id="tripsContainer">
-  
-            <!-- Trip cards are appended here -->
-  
-          </div>
-          
-      </div>
-      
-      <!-- ---------------------------------------------------------------------------------------------------- -->
-      <!-- Templates -->
-  
-      <template id="tripCardTemplate">
-        <div class="col-4">
-  
-          <!-- Card -->
-          <div class="card">
-              <img src="" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h4 class="card-title" id="nameText">Naomi</h4>
-                <p class="card-text" id="priceText">R10000</p>
-  
-                <p class="card-text mt-4" id="temp">654</p>
-  
-                <p class="card-text mt-4" id="descriptionText">Embark on a romantic odyssey aboard a luxury yacht, sailing from the enchanting Portofino, Italy, to the captivating Cinque Terre, Italy, where opulent comfort and intimate moments unite in a journey of pure romance.</p>
+          <!-- Trip cards container -->
+          <div class="row" id="trip-cards">
+              <!-- You can dynamically generate trip cards here using JavaScript -->
+              <div class="col-md-4">
+                  <div class="card trip-card">
+                      <div class="card-body">
+                          <h5 class="card-title">Trip 1</h5>
+                          <p>Departure: May 1, 2023</p>
+                          <p>Trip Code: T001</p>
+                          <p>Price: $500</p>
+                          <p>Duration: 3 days</p>
+                          <p>Destinations: 1</p>
+                          <button class="btn btn-success add-to-cart" data-destination="Trip 1" data-departure="May 1, 2023" data-code="T001" data-price="$500" data-duration="3" data-destinations="1">Add to Cart</button>
+                      </div>
+                  </div>
               </div>
-            </div>
-        </div>
-      </template>
-      </section>
-    <!-- Javascript -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="scripts/main.js"></script>
+              <!-- Repeat the above card for each trip with the respective data attributes -->
+          </div>
+      </div>
+  </div>
+
+  <!-- Add Bootstrap and jQuery scripts here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+  <script>
+    // Check if the current page is the trips page
+    if (window.location.href.indexOf("trips.html") > -1) {
+        // Function to handle adding a trip to the cart
+        function addToCart(destination, departure, code, price, duration, destinations) {
+            const selectedTrip = {
+                destination,
+                departure,
+                code,
+                price,
+                duration,
+                destinations
+            };
+
+            // Retrieve the existing cart data from localStorage or initialize an empty array
+            const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+            // Check if the trip is already in the cart, based on its unique identifier (e.g., code)
+            const isAlreadyInCart = cartItems.some(item => item.code === code);
+
+            if (!isAlreadyInCart) {
+                // Add the selected trip to the cart
+                cartItems.push(selectedTrip);
+
+                // Store the updated cart data back in localStorage
+                localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            }
+        }
+
+        // Event delegation for the "Add to Cart" button
+        $(document.body).on("click", ".add-to-cart", function () {
+            const destination = $(this).data("destination");
+            const departure = $(this).data("departure");
+            const code = $(this).data("code");
+            const price = $(this).data("price");
+            const duration = $(this).data("duration");
+            const destinations = $(this).data("destinations");
+
+            // Add the selected trip to the cart
+            addToCart(destination, departure, code, price, duration, destinations);
+        });
+    }
+</script>
 </body>
 </html>
